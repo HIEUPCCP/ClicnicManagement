@@ -1,0 +1,113 @@
+
+<section id="inner-title" class="inner-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-6"><h2>Scientific App</h2></div>
+        <div class="col-md-6 col-lg-6">
+          <div class="breadcrumbs">
+            <ul>
+              <li>Current Page:</li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="">Scientific App</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+  <br>
+  <br>
+
+  <table border="1">
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Illustration</th>
+      <th>InventedYear</th>
+      <th>Description</th>
+      <th>Quantity</th>
+      <th>Status</th>
+      <th>BrandId</th>
+      <th>OriginId</th>
+      <th>MachineCategoryId</th>
+      <th>Priceid</th>
+
+      <th>Brand</th>
+      <th>Origin</th>
+      <th>MachineCategory</th>
+      <th>Price</th>
+    </tr>
+
+    <tr *ngFor="let p of scientfic">
+      <td>{{p.id}}</td>
+      <td>{{p.name}}</td>
+      <td>
+        <img src="/src/assets/images/no-image.png" width="120" height="100">
+      </td>
+      <td>{{p.inventedYear}}</td>
+      <td>{{p.description}}</td>
+      <td>{{p.quantity}}</td>
+      <td>{{p.status}}</td>
+      <td>{{p.brandId}}</td>
+      <td>{{p.originId}}</td>
+      <td>{{p.machineCategoryId}}</td>
+      <td>{{p.priceid}}</td>
+
+      <td>{{p.brand}}</td>
+      <td>{{p.origin}}</td>
+      <td>{{p.machineCategory}}</td>
+      <td>{{p.price}}</td>
+     
+    </tr>
+  </table>
+  <br>
+  <br>
+  <br>
+  
+  
+   
+ 
+<hr>
+<div class="container">
+<div class="home-product">
+  <div class="row sm-gutter">
+    <!-- product item -->
+    <div class="col l-2-4 m-4 c-6" *ngFor="let p of scientfic">
+      <a class="home-product-item" href="#">
+        <div class="home-product-item-img" style="background-image: url(assets/img/prd_img_3.jpg)">
+        </div>
+        <h4 class="home-product-item-name">{{p.name}}</h4>
+        <div class="home-product-item__price">
+          <span class="home-product-item__price-old">1.400.000đ</span>
+          <span class="home-product-item__price-current">Price:{{p.priceid}}</span>
+        </div>
+        <div class="home-product-item__action">
+          <span class="home-product-item__like home-product-item__like--liked">
+            <i class="far fa-heart home-product-item-icon-like-empty"></i>
+            <i class="fas fa-heart home-product-item-icon home-product-item-icon-like-fill"></i>
+          </span>
+          <div class="home-product-item__rating">
+            <i class="fas fa-star home-product-item__star--gold"></i>
+            <i class="fas fa-star home-product-item__star--gold"></i>
+            <i class="fas fa-star home-product-item__star--gold"></i>
+            <i class="fas fa-star home-product-item__star--gold"></i>
+            <i class="fas fa-star home-product-item__star--gold"></i>
+          </div>
+        </div>
+        <div class="home-product-item__origin">
+          <span class="home-product-item__brand">Brand:{{p.brandId}}</span>
+          <span class="home-product-item__origin-name">Origin:{{p.originId}}</span>
+        </div>
+        <div class="home-product-item__favourite">
+          <i class="fas fa-check"></i>
+          <span>Yêu thích</span>
+        </div>
+        <div class="home-product-item__sale-off">
+          <span class="home-product-item__sale-off-percent">10%</span>
+          <span class="home-product-item__sale-off-label">GIẢM</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+</div>

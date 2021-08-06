@@ -7,8 +7,9 @@ import { BusinessAppComponent } from './Component/BusinessApp/business.component
 import { ContactUsComponent } from './Component/ContactUs/contact.component';
 import { EduccationAppComponent } from './Component/EduccationApp/educcation.component';
 import { HomeComponent } from './Component/Home/home.component';
-import { MedicalAppComponent } from './Component/MedicalApp/medical.component';
-import { ScientificAppComponent } from './Component/ScientificApp/scientific.component';
+import { MedicalAppComponent } from './Component/MedicalApp/medicalcomponent';
+import { ScientificAppComponent } from './Component/ScientificApp/scientificcomponent';
+
 import { ServiceComponent } from './Component/Services/service.component';
 
 const routes: Routes = [

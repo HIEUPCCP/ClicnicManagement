@@ -1,18 +1,32 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MedicalAppComponent } from './Component/MedicalApp/medicalcomponent';
+
+import { ScientificAppComponent } from './Component/ScientificApp/scientificcomponent';
+
+import { LibraryServiceApi } from './Services/Librarysreviceapi';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+   MedicalAppComponent,
+   ScientificAppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [
+    LibraryServiceApi
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
