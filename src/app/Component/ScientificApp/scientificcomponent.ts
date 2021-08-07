@@ -13,19 +13,18 @@ import { LibraryServiceApi } from "src/app/Services/Librarysreviceapi";
     templateUrl: './scientificcomponent.html'
 })
 export class ScientificAppComponent implements OnInit{
-    scientfics:ScientificInfo;
+   
   scientfic:ScientificInfo[];
-  brands=BrandInfo;
-  origins=OriginInfo;
-  medicines=MecineInfo;
-  prices=PriceInfo;
+  mecinetype:MecineInfo[];
+  typeid:number;
+  keyword:string;
  
 constructor(
     private libraryseviceapi:LibraryServiceApi
 ){}
     ngOnInit(){
-       
-
+    this.typeid=1
+    
         console.log( this.libraryseviceapi.ScientificList());
        
         this.libraryseviceapi.ScientificList().then(
@@ -38,8 +37,40 @@ constructor(
             err=>{
                 console.log(err);
             }
-                    );
+            );
+            //
+            this.libraryseviceapi.MecineType().then(
+                res=>{
+            
+                    this.mecinetype=res;
+                   
+                    },
+                    err=>{
+                        console.log(err);
+                    }
+            );
        
     }
-   
+    selectsearch(e:any){
+        this.libraryseviceapi.searchType(this.typeid).then(
+            res => {
+              this.scientfic = res;
+              console.log(this.scientfic);
+            },
+            err => {
+                console.log(err);
+            }
+          );
+    }
+    searchkey(){
+        this.libraryseviceapi.searchKey(this.keyword).then(
+            res => {
+              this.scientfic = res;
+              console.log(this.scientfic);
+            },
+            err => {
+                console.log(err);
+            }
+          );
+    }
 }

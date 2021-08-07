@@ -1,14 +1,32 @@
 
-<section id="inner-title" class="inner-title">
+<section id="inner-title" class="inner-titlescientific">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 col-lg-6"><h2>Scientific App</h2></div>
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-3 col-lg-3"><h3>Scientific List</h3></div>
+        
+        <div class="col-md-3 col-lg-3">
+          <div class="form-group">      
+            <select class="form-control" [(ngModel)]="typeid" (change)="selectsearch($event)">
+              <option value="{{c.id}}"  *ngFor="let c of mecinetype">{{c.name}}</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col-md-2 col-lg-2">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="keyword" placeholder="Name Product" >
+          </div>
+        </div>
+
+        <div class="col-md-1 col-lg-1">
+          <button style="font-size: 10px;" type="submit" class="btn btn-success" (click)="searchkey()">Search</button>
+        </div>
+
+        <div class="col-md-3 col-lg-3">
           <div class="breadcrumbs">
             <ul>
               <li>Current Page:</li>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="">Scientific App</a></li>
+              <li><a [routerLink]="['/home']">Home</a></li>
             </ul>
           </div>
         </div>
@@ -17,6 +35,42 @@
   </section> 
   <br>
   <br>
+  <hr>
+
+  <div class="container">
+  <div class="home-product">
+    <div class="row sm-gutter">
+    
+      <!-- product item -->
+      <div class="col l-2-4 m-4 c-6" *ngFor="let p of scientfic">
+        <a style="height: 100%;" class="home-product-item" [routerLink]="['/scientificdetail',{id:p.id}]"> <!--link-->
+          <div class="home-product-item-img" style="background-image: url(https://localhost:44323/Image/{{p.illustration}})">
+          </div>
+          <h4 class="home-product-item-name">Name:{{p.name}}</h4>
+          <div class="home-product-item__origin">
+            <span class="home-product-item__origin-name">InventedYear:{{p.inventedYear}}</span>
+          </div><br>
+          <div class="home-product-item__price">
+            <span class="home-product-item__price-current"><h6 style="color: chartreuse;"><i>click me</i></h6> </span>
+          </div>
+          <div class="home-product-item__favourite">
+            <i class="fas fa-check"></i>
+            <span>Yêu thích</span>
+          </div>
+          <div class="home-product-item__sale-off">
+            <span class="home-product-item__sale-off-percent">10%</span>
+            <span class="home-product-item__sale-off-label">GIẢM</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <hr>
 
   <table border="1">
     <tr>
@@ -42,7 +96,7 @@
       <td>{{p.id}}</td>
       <td>{{p.name}}</td>
       <td>
-        <img src="/src/assets/images/no-image.png" width="120" height="100">
+        <img src="https://localhost:44323/Image/{{p.illustration}}" width="120" height="100">
       </td>
       <td>{{p.inventedYear}}</td>
       <td>{{p.description}}</td>
@@ -53,61 +107,15 @@
       <td>{{p.machineCategoryId}}</td>
       <td>{{p.priceid}}</td>
 
-      <td>{{p.brand}}</td>
+      <td>{{p.illustration}}</td>
       <td>{{p.origin}}</td>
       <td>{{p.machineCategory}}</td>
       <td>{{p.price}}</td>
      
     </tr>
   </table>
-  <br>
-  <br>
-  <br>
-  
+ 
+
   
    
  
-<hr>
-<div class="container">
-<div class="home-product">
-  <div class="row sm-gutter">
-    <!-- product item -->
-    <div class="col l-2-4 m-4 c-6" *ngFor="let p of scientfic">
-      <a class="home-product-item" href="#">
-        <div class="home-product-item-img" style="background-image: url(assets/img/prd_img_3.jpg)">
-        </div>
-        <h4 class="home-product-item-name">{{p.name}}</h4>
-        <div class="home-product-item__price">
-          <span class="home-product-item__price-old">1.400.000đ</span>
-          <span class="home-product-item__price-current">Price:{{p.priceid}}</span>
-        </div>
-        <div class="home-product-item__action">
-          <span class="home-product-item__like home-product-item__like--liked">
-            <i class="far fa-heart home-product-item-icon-like-empty"></i>
-            <i class="fas fa-heart home-product-item-icon home-product-item-icon-like-fill"></i>
-          </span>
-          <div class="home-product-item__rating">
-            <i class="fas fa-star home-product-item__star--gold"></i>
-            <i class="fas fa-star home-product-item__star--gold"></i>
-            <i class="fas fa-star home-product-item__star--gold"></i>
-            <i class="fas fa-star home-product-item__star--gold"></i>
-            <i class="fas fa-star home-product-item__star--gold"></i>
-          </div>
-        </div>
-        <div class="home-product-item__origin">
-          <span class="home-product-item__brand">Brand:{{p.brandId}}</span>
-          <span class="home-product-item__origin-name">Origin:{{p.originId}}</span>
-        </div>
-        <div class="home-product-item__favourite">
-          <i class="fas fa-check"></i>
-          <span>Yêu thích</span>
-        </div>
-        <div class="home-product-item__sale-off">
-          <span class="home-product-item__sale-off-percent">10%</span>
-          <span class="home-product-item__sale-off-label">GIẢM</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
-</div>

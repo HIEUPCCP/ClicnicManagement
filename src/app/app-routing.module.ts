@@ -5,6 +5,7 @@ import { BlogDetailComponent } from './Component/BlogDetail/blogdetail.component
 import { BlogListComponent } from './Component/BlogList/bloglist.component';
 import { BusinessAppComponent } from './Component/BusinessApp/business.component';
 import { ContactUsComponent } from './Component/ContactUs/contact.component';
+import { DetailScientificComponent } from './Component/DetailScientfic/detailscientificcomponent';
 import { EduccationAppComponent } from './Component/EduccationApp/educcation.component';
 import { HomeComponent } from './Component/Home/home.component';
 import { MedicalAppComponent } from './Component/MedicalApp/medicalcomponent';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'medical',component:MedicalAppComponent},
   {path:'education',component:EduccationAppComponent},
   {path:'business',component:BusinessAppComponent},
+  {path:'scientificdetail',component:DetailScientificComponent},
 ];
 
 @NgModule({

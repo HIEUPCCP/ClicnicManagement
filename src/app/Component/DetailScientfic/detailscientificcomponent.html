@@ -1,0 +1,60 @@
+<section id="inner-title" class="inner-title">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-6"><h2>Detail Of Scientific</h2></div>
+        <div class="col-md-6 col-lg-6">
+          <div class="breadcrumbs">
+            <ul>
+              <li>Current Page:</li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="">Scientific App</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+  <br>
+  <br>
+ 
+  <section id="section18" class="section-margine">
+    <div class="container">
+    <div class="section18">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 wow fadeInUp" data-wow-delay=".2s">
+            <div class="section-18-img">
+                <!---->
+                <img src="https://localhost:44323/Image/{{scientfics.illustration}}" class="img-responsive" style="height: 300px;"><br>
+              <h5 >Name:{{scientfics.name}}</h5>
+              <h6 >InventedYear:{{scientfics.inventedYear}}</h6>
+            </div>
+          </div>
+        <div class="col-md-6 col-lg-6 wow fadeInUp">
+          <div class="textcont">
+            <h3>Description</h3>
+            <p>{{scientfics.description}}</p>
+            <h4>Brand</h4>
+            <p>{{scientfics.brandId}}</p>
+            <h4>Origin</h4>
+            <p>{{scientfics.originId}}</p>
+            <h4>Scientifc Type</h4>
+            <p>{{scientfics.machineCategoryId}}</p>
+           
+            <h4>Quantity</h4>
+            <div class="control-group form-group">
+                <div class="controls">
+                  <input style="width: 100px;" class="form-control" type="number" value="{{scientfics.quantity}}" disabled >
+                  <p class="help-block"></p>
+                </div>
+              </div>
+              <h4>Price</h4>
+              <button type="submit" class="btn btn-success">$ {{scientfics.priceid}}</button>
+          </div>  
+        </div>
+       
+      </div>
+      
+    </div>  
+    </div>
+  </section>
+  <br><br>

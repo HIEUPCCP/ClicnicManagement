@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DetailScientificComponent } from './Component/DetailScientfic/detailscientificcomponent';
 import { MedicalAppComponent } from './Component/MedicalApp/medicalcomponent';
 
 import { ScientificAppComponent } from './Component/ScientificApp/scientificcomponent';
@@ -16,6 +17,7 @@ import { LibraryServiceApi } from './Services/Librarysreviceapi';
     AppComponent,
    MedicalAppComponent,
    ScientificAppComponent,
+   DetailScientificComponent,
   ],
   imports: [
     BrowserModule,
